@@ -7,10 +7,11 @@ public class Aluno extends Pessoas {
 
 	private ArrayList<Disciplinas> materiasMatriculadas;
 
-	public Aluno(int idPessoa, String nome, Date nascimento, String fone, String cpf, String email) {
-		super(idPessoa, nome, nascimento, fone, cpf, email);
-
+	public Aluno(int idPessoa, String nome, Date nascimento, String fone, String cpf, String email, String ocupacao, ArrayList<Disciplinas> materiasMatriculadas) {
+		super(idPessoa, nome, nascimento, fone, cpf, email, ocupacao);
+		this.materiasMatriculadas = materiasMatriculadas;
 	}
+
 	public ArrayList<Disciplinas> getMateriasMatriculadas() {
 		return materiasMatriculadas;
 	}

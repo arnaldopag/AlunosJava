@@ -10,15 +10,16 @@ public class Pessoas {
     private String fone;
     private String cpf;
     private String email;
-    private List<Pessoas> listaPessoas;
+    private String ocupacao;
 
-    public Pessoas(int idPessoa, String nome, Date nascimento, String fone, String cpf, String email) {
+    public Pessoas(int idPessoa, String nome, Date nascimento, String fone, String cpf, String email,String ocupacao) {
         this.idPessoa = idPessoa;
         this.nome = nome;
         this.nascimento = nascimento;
         this.fone = fone;
         this.cpf = cpf;
         this.email = email;
+        this.ocupacao = ocupacao;
     }
 
     public int getIdPessoa() {
@@ -69,23 +70,24 @@ public class Pessoas {
         this.email = email;
     }
 
-    public List<Pessoas> getListaPessoas() {
-        return listaPessoas;
+    public String getOcupacao() {
+        return ocupacao;
     }
 
-    public void setListaPessoas(List<Pessoas> listaPessoas) {
-        this.listaPessoas = listaPessoas;
+    public void setOcupacao(String ocupacao) {
+        this.ocupacao = ocupacao;
     }
 
     @Override
     public String toString() {
         return "Pessoas{" +
-                "idPessoa=" + idPessoa +
-                ", nome='" + nome + '\'' +
-                ", nascimento=" + nascimento +
-                ", fone='" + fone + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", email='" + email + '\'' +
+                "idPessoa=" + this.idPessoa +
+                ", nome='" + this.nome + '\'' +
+                ", nascimento=" + this.nascimento +
+                ", fone='" + this.fone + '\'' +
+                ", cpf='" + this.cpf + '\'' +
+                ", email='" + this.email + '\'' +
+                ", ocupação: " + this.ocupacao +
                 '}';
     }
 }

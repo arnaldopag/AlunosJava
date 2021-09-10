@@ -2,17 +2,16 @@ package aluno;
 
 public class Disciplinas {
     private int codDisciplina;
+    private int idProfessor;
     private String nome;
     private int qtdTurmas;
-    private double media;
-    private double [] notas = new double [3];
 
-    public Disciplinas(int codDisciplina, String nome, int qtdTurmas, double media, double[] notas) {
+    public Disciplinas(int codDisciplina,int idProfessor, String nome, int qtdTurmas) {
         this.codDisciplina = codDisciplina;
+        this.idProfessor = idProfessor;
         this.nome = nome;
         this.qtdTurmas = qtdTurmas;
-        this.media = media;
-        this.notas = notas;
+
     }
 
     public int getCodDisciplina() {
@@ -21,6 +20,14 @@ public class Disciplinas {
 
     public void setCodDisciplina(int codDisciplina) {
         this.codDisciplina = codDisciplina;
+    }
+
+    public int getIdProfessor() {
+        return idProfessor;
+    }
+
+    public void setIdProfessor(int idProfessor) {
+        this.idProfessor = idProfessor;
     }
 
     public String getNome() {
@@ -39,19 +46,4 @@ public class Disciplinas {
         this.qtdTurmas = qtdTurmas;
     }
 
-    public double getMedia() {
-        return media;
-    }
-
-    public void setMedia(double media) {
-        this.media = media;
-    }
-
-    public double[] getNotas() {
-        return notas;
-    }
-
-    public void setNotas(double[] notas) {
-        this.notas = notas;
-    }
 }
