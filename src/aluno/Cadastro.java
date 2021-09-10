@@ -10,6 +10,8 @@ import java.util.Scanner;
 public final class Cadastro {
     private static List<Pessoas> listaPessoas = new ArrayList<>();
     private static ArrayList<Disciplinas> listaDisciplinas = new ArrayList<>();
+    private static ArrayList<Boletim> listaNotas = new ArrayList<>();
+
     private static Scanner sc = new Scanner(System.in);
     private static String ocupacaoProfessor = "Professor";
     private static String ocupacaoAluno = "Aluno";
@@ -69,7 +71,11 @@ public final class Cadastro {
             int idPessoa = sc.nextInt();
 
             if(  listaPessoas.isEmpty() && VerificaOcupacao(listaPessoas,idPessoa)){
-                return "Nenhum Professor Cadastrado";
+                String retorno = "=====ERRO=====/n";
+                retorno += "Nenhum Professor Cadastrado ou /n";
+                retorno += "Apenas professores podem Cadastrar Disciplinas/n";
+                retorno += "================================================";
+                return retorno;
             }
 
             System.out.print("Codigo da Disciplina: ");
@@ -82,6 +88,29 @@ public final class Cadastro {
             listaDisciplinas.add(novaDisciplina);
 
             return "Disciplina Cadastrada";
+        }
+        public static String CadastroNotas(){
+            int idAluno;
+            int idPessoa;
+            System.out.println("Digite seu Código: ");
+            idPessoa = sc.nextInt();
+            if(  listaDisciplinas.isEmpty() && VerificaOcupacao(listaPessoas,idPessoa)){
+                String retorno = "---ERRO---/n";
+                retorno += "Apenas Profores podem cadastrar notas/n";
+                retorno += "Nenhuma disciplina Cadastrada/n";
+                retorno += "=======================================";
+                return retorno;
+            }
+            System.out.println("Digite o codigo do aluno");
+            idAluno = sc.nextInt();
+            while (VerificaOcupacao(listaPessoas, idAluno)){
+                System.out.println("--Codigo de Aluno Invalido--");
+                System.out.print("Digite Novamente:");
+                idAluno = sc.nextInt();
+            }
+
+
+            return  "sim";
         }
 
 
