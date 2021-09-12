@@ -1,4 +1,4 @@
-package aluno;
+package aluno.Models;
 
 public class Disciplinas {
     private int codDisciplina;
