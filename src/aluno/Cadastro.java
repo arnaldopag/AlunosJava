@@ -17,7 +17,25 @@ public final class Cadastro {
     private static String ocupacaoProfessor = "Professor";
     private static String ocupacaoAluno = "Aluno";
 
-
+    public static void Menu() throws ParseException {
+        int opcao = 0;
+        System.out.println("Digite a opcao desejada");
+        System.out.println("1 - Cadasto Professor");
+        System.out.println("2 - Cadasto Aluno");
+        System.out.println("3 - Cadasto Disciplinas");
+        System.out.println("4 - Cadasto Notas");
+        if (opcao == 1){
+            CadastroProfessor();
+        }else if(opcao == 2){
+            CadastroAluno();
+        }else if (opcao == 3){
+            CadastroMaterias();
+        }else if(opcao ==4){
+            CadastroNotas();
+        }else{
+            System.out.println("Opcao invalida!!!");
+        }
+    }
     public static void CadastroAluno() throws ParseException {
         System.out.print("Codigo Aluno: ");
         int codAluno = sc.nextInt();
@@ -63,15 +81,15 @@ public final class Cadastro {
         String titulacao = sc.next();
         Date dataNascimentoDate = new SimpleDateFormat("dd/MM/yyy").parse(dataNascimentoString);
         Date dataAdmissao = new SimpleDateFormat("dd/MM/yyy").parse(dataAdmissaoString);
-        Professor novoProfessor = new Professor(codProfessor, nome, dataNascimentoDate, fone, cpf, email, ocupacaoProfessor, dataAdmissao, titulacao, listaDisciplinas);
+        Professor novoProfessor = new Professor(codProfessor, nome, dataNascimentoDate, fone, cpf, email, ocupacaoProfessor, dataAdmissao, titulacao);
         listaPessoas.add(novoProfessor);
     }
 
     public static String CadastroMaterias() {
         System.out.println("Digite seu Código: ");
-        int idPessoa = sc.nextInt();
+        int idProfessor = sc.nextInt();
 
-        if (listaPessoas.isEmpty() && VerificaOcupacao(listaPessoas, idPessoa)) {
+        if (listaPessoas.isEmpty() && VerificaOcupacao(listaPessoas, idProfessor)) {
             String retorno = "=====ERRO=====/n";
             retorno += "Nenhum Professor Cadastrado ou /n";
             retorno += "Apenas professores podem Cadastrar Disciplinas/n";
@@ -79,13 +97,14 @@ public final class Cadastro {
             return retorno;
         }
 
+
         System.out.print("Codigo da Disciplina: ");
         int codDisiplina = sc.nextInt();
         System.out.print("Nome da disciplina: ");
         String nomeDisciplina = sc.next();
         System.out.print("Quantidade de turmas Ofertadas: ");
         int qtdTurmas = sc.nextInt();
-        Disciplinas novaDisciplina = new Disciplinas(codDisiplina, idPessoa, nomeDisciplina, qtdTurmas);
+        Disciplinas novaDisciplina = new Disciplinas(codDisiplina, idProfessor, nomeDisciplina, qtdTurmas);
         listaDisciplinas.add(novaDisciplina);
 
         return "Disciplina Cadastrada";

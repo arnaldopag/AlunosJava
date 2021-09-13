@@ -31,7 +31,6 @@ public final class MostrarPessoas {
                 System.out.println("Fone Professor" + pessoa.getFone());
                 System.out.println("Data Nascimento Professor:" + pessoa.getNascimento());
                 System.out.println("Cpf Professor:" + pessoa.getCpf());
-                System.out.println("Cpf Professor:" + pessoa.get);
                 System.out.println("=======================================");
             }
         }

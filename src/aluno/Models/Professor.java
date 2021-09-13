@@ -10,7 +10,7 @@ public class Professor extends Pessoas{
     private String titulacao;
     private ArrayList<Disciplinas> materias;
 
-    public Professor(int idPessoa, String nome, Date nascimento, String fone, String cpf, String email, String ocupacao, Date dataContrato, String titulacao, ArrayList<Disciplinas> materias) {
+    public Professor(int idPessoa, String nome, Date nascimento, String fone, String cpf, String email, String ocupacao, Date dataContrato, String titulacao) {
         super(idPessoa, nome, nascimento, fone, cpf, email, ocupacao);
         this.dataContrato = dataContrato;
         this.titulacao = titulacao;
@@ -33,13 +33,6 @@ public class Professor extends Pessoas{
         this.titulacao = titulacao;
     }
 
-    public ArrayList<Disciplinas> getMaterias() {
-        return materias;
-    }
-
-    public void setMaterias(ArrayList<Disciplinas> materias) {
-        this.materias = materias;
-    }
 
 
 

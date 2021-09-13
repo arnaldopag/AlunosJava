@@ -1,5 +1,7 @@
 package aluno.Main;
 import aluno.Cadastro;
+import aluno.Matricula;
+import aluno.Views.MostrarDisciplinas;
 import aluno.Views.MostrarPessoas;
 
 import java.text.ParseException;
@@ -11,27 +13,20 @@ public class Escola {
 		int opcao = 0;
 		do {
 			System.out.println("===Menu Escola====");
-			System.out.println("1- Cadastro Professor");
-			System.out.println("2 - Cadastro Aluno");
-			System.out.println("3 - Cadastro Disiplinas");
-			System.out.println("4 - Cadastro Notas ");
-			System.out.println("5 - Pessoas Cadastradas");
-			System.out.println("6 - Disciplinas Cadastradas ");
+			System.out.println("1 - Cadastros ");
+			System.out.println("2 - Matricular Aluno");
+			System.out.println("3 - Litagem Alunos / Professores");
+			System.out.println("4 - Listagens Disciplinas ");
 			System.out.println("0 -Sair");
 			opcao = sc.nextInt();
 			if (opcao == 1){
-				Cadastro.CadastroProfessor();
+				Cadastro.Menu();
 			}else if (opcao == 2){
-				Cadastro.CadastroAluno();
-			}else if (opcao == 3){
-				System.out.println(Cadastro.CadastroMaterias());
-			}else if (opcao == 4){
-				System.out.println(Cadastro.CadastroNotas());
-			}else if(opcao == 5){
+				System.out.println("Seu Codigo : ");
+				int codProfessor = sc.nextInt();
+				Matricula.MatricularAluno(codProfessor);
+			}else if(opcao == 3){
 				MostrarPessoas.MostrarPessoas();
-
-			}else if(opcao == 6){
-
 			}else{
 				System.out.println("opcao Invalida!!!");
 			}
