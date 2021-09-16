@@ -11,7 +11,7 @@ public class Escola {
 	public static void main(String[] args) throws ParseException {
 		Scanner sc = new Scanner(System.in);
 		int opcao = 0;
-		do {
+
 			System.out.println("===Menu Escola====");
 			System.out.println("1 - Cadastros ");
 			System.out.println("2 - Matricular Aluno");
@@ -30,6 +30,6 @@ public class Escola {
 			}else{
 				System.out.println("opcao Invalida!!!");
 			}
-		} while (opcao != 0);
+
 	}
 }
